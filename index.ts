@@ -1,2 +1,1 @@
-console.log("Hello Git");
-console.log("Git is awesome!");
+console.log("Version B du message")
