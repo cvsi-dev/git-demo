@@ -1,1 +1,2 @@
-console.log("Version A du message")
+console.log("Version A");
+console.log("Version B");
