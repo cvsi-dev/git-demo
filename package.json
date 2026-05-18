@@ -1,1 +1,13 @@
-{"name": "git-demo", "version": "1.0.0"}
+{
+  "name": "git-demo",
+  "version": "1.0.0",
+  "description": "Apprentissage Git et GitHub Actions",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "devDependencies": {
+    "typescript":"^5.0.0"
+  }
+}
