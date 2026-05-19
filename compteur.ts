@@ -1,2 +1,2 @@
-let count = 0;
+const count = 0;
 console.log("Compteur :", count);

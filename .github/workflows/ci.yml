@@ -1,4 +1,4 @@
-name: CI - Compilation TypeScript
+name: CI - Build & Lint
 #https://www.yamllint.com : verifier la syntaxe yml
 on: 
     push: 
@@ -8,7 +8,7 @@ on:
 
 jobs:
     build:
-        name: Compiler TypeScript
+        name: Compiler TypeScript et Lint
         runs-on: ubuntu-latest
 
         steps:
@@ -19,9 +19,13 @@ jobs:
               uses: actions/setup-node@v4
               with:
                 node-version: '20'
+                cache: 'npm'
 
             - name: Installer les dépendances
               run: npm install
+        
+            - name: Vérifier la qualité du code (Lint)
+              run: npm run lint
         
             - name: Compiler le projet
               run: npm run build
