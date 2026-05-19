@@ -1,0 +1,29 @@
+name: CI - Compilation TypeScript
+
+on: 
+    push: 
+        branches: [main]
+    pull_request: 
+        branches: [main]
+
+jobs:
+    build:
+        name: Compiler TypeScript
+        runs-on: ubuntu-latest
+    steps:
+        - name: Checkout du code
+        uses: action/Checkout@v4
+        
+        - name: Setup Node.js
+        uses: action/setup-node@v4
+        with:
+            node-version: '20'
+
+        - name: Installer les dépendances
+        run: npm install
+        
+        - name: Compiler le projet
+        run: npm run build
+      
+        - name: Lister les fichiers compilés
+        run: ls -la dist/
